@@ -1,0 +1,20 @@
+.custom-img {
+    height: 20vh;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+  
+.hero-card-title {
+    font-size: 3rem!important;
+}
+
+.WelcomeHero {
+    text-align: center;
+    border-radius: 0!important;
+}
+
+hr {
+    display: inline-block;
+    width: 75%;
+    ;
+}
