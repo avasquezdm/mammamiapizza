@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './views/Home';
 import Cart from './views/Cart';
 import PizzaDetail from './views/PizzaDetail';
 import Context from './contexts/Context';
-import { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   
+  // estados y sus funciones para primero traer las pizzas del json y luego llevarlas al carro.
   const [pizzas, setPizzas] = useState([])
   const [pizzasOnCart, setPizzasOnCart] = useState([])
 
@@ -25,7 +26,7 @@ function App() {
     // el spread operator se agrega porque es más correcto, buena práctica
   }
   
-
+// función que agrega pizzas al carrito: suma 1 si ya existe o crea la primera, respectivamente
   const addToCart = (id) => {
     const index = pizzasOnCart.findIndex((p) => p.id === id)
     if (index >= 0) {
@@ -36,11 +37,12 @@ function App() {
       setPizzasOnCart([...pizzasOnCart])
     }
   }
-
+// función que agrega pizzas al carrito: suma 1 si ya existe o crea la primera, respectivamente
   const getPizzaById = (id) => {
     return pizzas.find((pizza) => pizza.id === id);
   };
 
+//  función para calcular el total, considerando cada pizza del carro, sus subtotales y da la sumatoria de estos
   const calculateTotal = () => {
     let total = 0;
     pizzasOnCart.forEach((p) => {
