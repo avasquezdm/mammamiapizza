@@ -16,7 +16,7 @@ const PizzaCard = ({pizza}) => {
   
 
   return (
-    <Card style={{ width: '20vw', margin:"1em" }}>
+    <Card style={{ width: '20vw', margin:"0.5em" }}>
       <Card.Img variant="top" src={pizza.img} />
 
       <Card.Body>
@@ -38,14 +38,14 @@ const PizzaCard = ({pizza}) => {
           
           <Button 
             className='text-white w-50'
-            variant="info"
+            variant="secondary"
             onClick={() => goToPizzaDetail(pizza.id)}
             >Ver más 👀
           </Button>
 
           <Button 
             className='w-50'
-            variant="danger"
+            variant="success"
             onClick={() => addToCart(pizza.id)}
             >Añadir 🛒
           </Button>

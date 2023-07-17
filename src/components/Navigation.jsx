@@ -9,9 +9,9 @@ const Navigation = () => {
     const { total } = useContext(Context)
   
     return (
-        <Navbar className="bg-info sticky-top">
+        <Navbar className="bg-dark sticky-top">
         <Container>
-          <Navbar.Brand><Link to="/" className='no-decoration text-white'>🍕 Pizzería Mamma Mía!</Link></Navbar.Brand>
+          <Navbar.Brand><Link to="/" className='no-decoration text-white'>🍕 ¡Pizzería Mamma Mía!</Link></Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className='text-white fs-5'>
