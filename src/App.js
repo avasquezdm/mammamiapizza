@@ -19,7 +19,7 @@ function App() {
   },[]) 
 
   const getData = async () => {
-    const res = await fetch ('/pizzas.json')
+    const res = await fetch ('./pizzas.json')
     const data = await res.json()
     // hasta acá, los datos (json de pizzas) están en "data" entonces hay que setearlos, disponerlos al resto del código; con la función setPizzas quedan en "pizzas"
     setPizzas([...data])
