@@ -7,6 +7,7 @@ import Cart from './views/Cart';
 import PizzaDetail from './views/PizzaDetail';
 import Context from './contexts/Context';
 import Navigation from './components/Navigation';
+import pizzasData from './pizzas.json';
 
 function App() {
   
@@ -15,16 +16,9 @@ function App() {
   const [pizzasOnCart, setPizzasOnCart] = useState([])
 
   useEffect(() => {
-    getData()
-  },[]) 
-
-  const getData = async () => {
-    const res = await fetch ('./pizzas.json')
-    const data = await res.json()
-    // hasta acá, los datos (json de pizzas) están en "data" entonces hay que setearlos, disponerlos al resto del código; con la función setPizzas quedan en "pizzas"
-    setPizzas([...data])
-    // el spread operator se agrega porque es más correcto, buena práctica
-  }
+    // Establece los datos directamente del archivo importado
+    setPizzas([...pizzasData]);
+  }, []);
   
 // función que agrega pizzas al carrito: suma 1 si ya existe o crea la primera, respectivamente
   const addToCart = (id) => {
